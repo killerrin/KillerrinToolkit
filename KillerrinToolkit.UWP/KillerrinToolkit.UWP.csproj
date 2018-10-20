@@ -132,6 +132,7 @@
       <DependentUpon>UserAccountButton.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Converters\ShorthandCurrencyConverter.cs" />
     <Compile Include="Converters\EnumSpaceConverter.cs" />
     <Compile Include="Converters\EnumStringConverter.cs" />
     <Compile Include="Converters\InverseBooleanToVisibilityConverter.cs" />
@@ -163,6 +164,7 @@
     <Compile Include="Store\InAppPurchaseManagerBase.cs" />
     <Compile Include="Store\InAppPurchaseManagerFactory.cs" />
     <Compile Include="Store\ProductKind.cs" />
+    <Compile Include="Temporary\CurrencyHelpers.cs" />
     <Compile Include="Temporary\DateTimeHelpers.cs" />
     <Compile Include="Temporary\ExceptionHelpers.cs" />
     <Compile Include="Temporary\ModelBase.cs" />
