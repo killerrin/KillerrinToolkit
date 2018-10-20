@@ -7,8 +7,6 @@ namespace KillerrinToolkit.Core.Helpers
 {
     public static class ExceptionHelpers
     {
-        public static bool DebugMode { get { return Debugger.IsAttached; } }
-
         public static string PrintOutException(this Exception ex, string headerMessage)
         {
             string str = headerMessage;

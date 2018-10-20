@@ -27,7 +27,7 @@ namespace KillerrinToolkit.UWP.Store
         {
             get
             {
-                if (ExceptionHelpers.DebugMode) return LicenseInfoSimulator;
+                if (DebugHelpers.DebugMode) return LicenseInfoSimulator;
                 return LicenseInfoReal;
             }
         }
@@ -40,7 +40,7 @@ namespace KillerrinToolkit.UWP.Store
         {
             get
             {
-                if (ExceptionHelpers.DebugMode) return GuidSimulator;
+                if (DebugHelpers.DebugMode) return GuidSimulator;
                 return GuidReal;
             }
         }
@@ -53,7 +53,7 @@ namespace KillerrinToolkit.UWP.Store
         {
             get
             {
-                if (ExceptionHelpers.DebugMode) return UriSimulator;
+                if (DebugHelpers.DebugMode) return UriSimulator;
                 return UriReal;
             }
         }
@@ -80,7 +80,7 @@ namespace KillerrinToolkit.UWP.Store
         {
             try
             {
-                if (ExceptionHelpers.DebugMode)
+                if (DebugHelpers.DebugMode)
                     return await CurrentAppSimulator.LoadListingInformationAsync();
 
                 return await CurrentApp.LoadListingInformationAsync();
@@ -189,7 +189,7 @@ namespace KillerrinToolkit.UWP.Store
             {
                 PurchaseResults purchaseResults;
 
-                if (ExceptionHelpers.DebugMode)
+                if (DebugHelpers.DebugMode)
                 {
                     Debug.WriteLine("Debug mode active, Simulating product purchase");
                     purchaseResults = await CurrentAppSimulator.RequestProductPurchaseAsync(id);
@@ -215,7 +215,7 @@ namespace KillerrinToolkit.UWP.Store
                     case ProductPurchaseStatus.NotPurchased:
                         Debug.WriteLine("User chose to not purchase the product");
                         product.Purchased = false;
-                        if (ExceptionHelpers.DebugMode)
+                        if (DebugHelpers.DebugMode)
                         {
                             Debug.WriteLine("Simulating Purchase");
                             MarkProductPurchased(product);
