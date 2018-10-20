@@ -15,8 +15,8 @@ namespace KillerrinToolkit.Authentication.Services
     {
         private static Random _random = new Random();
 
-        private readonly IRepository<User> _userRepository;
-        public AuthenticationService(IRepository<User> userRepository)
+        private readonly IRepository<IUser> _userRepository;
+        public AuthenticationService(IRepository<IUser> userRepository)
         {
             _userRepository = userRepository;
         }
