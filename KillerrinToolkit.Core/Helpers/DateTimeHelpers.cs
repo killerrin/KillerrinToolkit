@@ -4,7 +4,7 @@ using System.Text;
 
 namespace KillerrinToolkit.Core.Helpers
 {
-    public static class DateTimeExtensions
+    public static class DateTimeHelpers
     {
         public const int Minute = 60;
         public const int Hour = Minute * 60;
