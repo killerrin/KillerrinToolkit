@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KillerrinToolkit.EFCore", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KillerrinToolkit.UWP", "KillerrinToolkit.UWP\KillerrinToolkit.UWP.csproj", "{D449D632-EAA2-4289-8654-6599B6D933B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KillerrinToolkit.Authentication", "KillerrinToolkit.Authentication\KillerrinToolkit.Authentication.csproj", "{2C944E9C-0B49-415D-870E-2C1C884C4E01}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,22 @@ Global
 		{D449D632-EAA2-4289-8654-6599B6D933B0}.Release|x64.Build.0 = Release|x64
 		{D449D632-EAA2-4289-8654-6599B6D933B0}.Release|x86.ActiveCfg = Release|x86
 		{D449D632-EAA2-4289-8654-6599B6D933B0}.Release|x86.Build.0 = Release|x86
+		{2C944E9C-0B49-415D-870E-2C1C884C4E01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C944E9C-0B49-415D-870E-2C1C884C4E01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C944E9C-0B49-415D-870E-2C1C884C4E01}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{2C944E9C-0B49-415D-870E-2C1C884C4E01}.Debug|ARM.Build.0 = Debug|Any CPU
+		{2C944E9C-0B49-415D-870E-2C1C884C4E01}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2C944E9C-0B49-415D-870E-2C1C884C4E01}.Debug|x64.Build.0 = Debug|Any CPU
+		{2C944E9C-0B49-415D-870E-2C1C884C4E01}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2C944E9C-0B49-415D-870E-2C1C884C4E01}.Debug|x86.Build.0 = Debug|Any CPU
+		{2C944E9C-0B49-415D-870E-2C1C884C4E01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C944E9C-0B49-415D-870E-2C1C884C4E01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C944E9C-0B49-415D-870E-2C1C884C4E01}.Release|ARM.ActiveCfg = Release|Any CPU
+		{2C944E9C-0B49-415D-870E-2C1C884C4E01}.Release|ARM.Build.0 = Release|Any CPU
+		{2C944E9C-0B49-415D-870E-2C1C884C4E01}.Release|x64.ActiveCfg = Release|Any CPU
+		{2C944E9C-0B49-415D-870E-2C1C884C4E01}.Release|x64.Build.0 = Release|Any CPU
+		{2C944E9C-0B49-415D-870E-2C1C884C4E01}.Release|x86.ActiveCfg = Release|Any CPU
+		{2C944E9C-0B49-415D-870E-2C1C884C4E01}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

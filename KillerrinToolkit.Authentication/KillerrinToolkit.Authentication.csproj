@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Core" Version="1.5.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KillerrinToolkit.Core\KillerrinToolkit.Core.csproj" />
+    <ProjectReference Include="..\KillerrinToolkit.EFCore\KillerrinToolkit.EFCore.csproj" />
+  </ItemGroup>
+
+</Project>

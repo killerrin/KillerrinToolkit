@@ -12,7 +12,7 @@ namespace KillerrinToolkit.UWP.Services
 {
     public class NavigationService : ServiceBase
     {
-        public event NavigatingCancelEventHandler Navigating;
+        //public event NavigatingCancelEventHandler Navigating;
         public event BackClickEventHandler BackButtonClicked;
 
         private Frame m_frame;
