@@ -144,6 +144,7 @@
     <Compile Include="CortanaTools.cs" />
     <Compile Include="Helpers\AdaptiveTriggerConsts.cs" />
     <Compile Include="Helpers\ImageHelper.cs" />
+    <Compile Include="Helpers\XamlControlHelper.cs" />
     <Compile Include="KillerrinApplicationData.cs" />
     <Compile Include="Models\IndicatorProgressReport.cs" />
     <Compile Include="Models\TaskCompletionNotifier.cs" />
