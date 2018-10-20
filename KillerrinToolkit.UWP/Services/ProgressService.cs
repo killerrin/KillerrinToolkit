@@ -11,12 +11,11 @@ namespace KillerrinToolkit.UWP.Services
 {
     public class ProgressService : ServiceBase
     {
-        private ProgressIndicator m_progressIndicator;
-        public ProgressIndicator ProgressIndicator { get { return m_progressIndicator; } }
+        public ProgressIndicator ProgressIndicator { get; private set; }
 
         public ProgressService(ProgressIndicator progressIndicator)
         {
-            m_progressIndicator = progressIndicator;
+            ProgressIndicator = progressIndicator;
         }
 
         public void Reset()
@@ -34,12 +33,12 @@ namespace KillerrinToolkit.UWP.Services
         #region Show/Hide
         public void Show()
         {
-            m_progressIndicator.Visibility = Visibility.Visible;
-            m_progressIndicator.PercentageVisibility = Visibility.Visible;
+            ProgressIndicator.Visibility = Visibility.Visible;
+            ProgressIndicator.PercentageVisibility = Visibility.Visible;
         }
         public void Hide()
         {
-            m_progressIndicator.Visibility = Visibility.Collapsed;
+            ProgressIndicator.Visibility = Visibility.Collapsed;
         }
         #endregion
 
@@ -57,32 +56,32 @@ namespace KillerrinToolkit.UWP.Services
         #region Individual Values
         public Visibility Visibility
         {
-            get { return m_progressIndicator.Visibility; }
-            set { m_progressIndicator.Visibility = value; }
+            get { return ProgressIndicator.Visibility; }
+            set { ProgressIndicator.Visibility = value; }
         }
 
         public bool IsRingEnabled
         {
-            get { return m_progressIndicator.IsRingActive; }
-            set { m_progressIndicator.IsRingActive = value; }
+            get { return ProgressIndicator.IsRingActive; }
+            set { ProgressIndicator.IsRingActive = value; }
         }
 
         public Visibility PercentageVisibility
         {
-            get { return m_progressIndicator.PercentageVisibility; }
-            set { m_progressIndicator.PercentageVisibility = value; }
+            get { return ProgressIndicator.PercentageVisibility; }
+            set { ProgressIndicator.PercentageVisibility = value; }
         }
 
         public double PercentageCompleted
         {
-            get { return m_progressIndicator.PercentageCompleted; }
-            set { m_progressIndicator.PercentageCompleted = value; }
+            get { return ProgressIndicator.PercentageCompleted; }
+            set { ProgressIndicator.PercentageCompleted = value; }
         }
 
         public string StatusMessage
         {
-            get { return m_progressIndicator.StatusMessage; }
-            set { m_progressIndicator.StatusMessage = value; }
+            get { return ProgressIndicator.StatusMessage; }
+            set { ProgressIndicator.StatusMessage = value; }
         }
         #endregion
 
@@ -91,8 +90,8 @@ namespace KillerrinToolkit.UWP.Services
             if (!ServiceEnabled) return;
 
             IsRingEnabled = isRingEnabled;
-            m_progressIndicator.PercentageCompleted = percentage;
-            m_progressIndicator.StatusMessage = message;
+            ProgressIndicator.PercentageCompleted = percentage;
+            ProgressIndicator.StatusMessage = message;
 
             if (debugWriteLine)
                 Debug.WriteLine(string.Format("{0} | {1} | {2}", isRingEnabled, percentage, message));
