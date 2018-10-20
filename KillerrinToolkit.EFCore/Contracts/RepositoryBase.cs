@@ -60,6 +60,11 @@ namespace KillerrinToolkit.EFCore.Contracts
         {
             return _dbSet;
         }
+        public virtual IQueryable<T> GetPaged(int skip, int take)
+        {
+            return GetAllQuery().Skip(skip).Take(take);
+        }
+
 
         public virtual void Remove(int key)
         {
