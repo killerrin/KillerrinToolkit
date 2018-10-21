@@ -1,4 +1,5 @@
 ﻿using BCrypt.Net;
+using KillerrinToolkit.Authentication.Models.Contracts;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -13,21 +14,33 @@ namespace KillerrinToolkit.Authentication.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
+        [Required]
+        [DataType(DataType.DateTime)]
+        public DateTime CreatedOn { get; set; }
+
+        [Required]
+        [DataType(DataType.DateTime)]
+        public DateTime ModifiedOn { get; set; }
+
+        [Required]
         public string Username { get; set; }
 
+        [Required]
         [EmailAddress]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-        public DateTime? Expiry { get; set; }
-
+        [Required]
         [DataType(DataType.Password)]
         [JsonIgnore]
         public string PasswordHash { get; set; }
 
-        [JsonIgnore]
-        public string AuthToken { get; set; }
+        [DataType(DataType.DateTime)]
+        public DateTime? PasswordExpiry { get; set; }
+
+        public ICollection<AuthToken> AuthTokens { get; set; } = new List<AuthToken>();
+
     }
 }

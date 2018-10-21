@@ -1,4 +1,5 @@
 ﻿using KillerrinToolkit.Authentication.Models;
+using KillerrinToolkit.Authentication.Models.Contracts;
 using KillerrinToolkit.Authentication.Models.Enums;
 using KillerrinToolkit.Core.Helpers;
 using KillerrinToolkit.EFCore.Contracts;
@@ -13,97 +14,99 @@ namespace KillerrinToolkit.Authentication.Services
 {
     public class AuthenticationService
     {
-        private static Random _random = new Random();
+        protected static Random _random = new Random();
+        protected readonly IRepository<IUser> _userRepository;
+        protected readonly IRepository<IAuthToken> _authTokenRepository;
 
-        private readonly IRepository<IUser> _userRepository;
-        public AuthenticationService(IRepository<IUser> userRepository)
+        public AuthenticationService(IRepository<IUser> userRepository, IRepository<IAuthToken> authTokenRepository)
         {
             _userRepository = userRepository;
+            _authTokenRepository = authTokenRepository;
         }
 
-        #region Password
-        private const int WorkFactor = 12;
-        public void FakeHash() => BCrypt.Net.BCrypt.HashPassword("", WorkFactor);
-        public string HashPassword(string password) => BCrypt.Net.BCrypt.HashPassword(password, WorkFactor + _random.Next(0, 3));
-        public bool VerifyPassword(string password, string hash) => BCrypt.Net.BCrypt.Verify(password, hash);
-        public bool IsPasswordExpired(DateTime? expiry)
+        #region AuthToken
+        public virtual IAuthToken VerifyAuthToken(string authToken)
         {
-            if (expiry == null) return false;
-            return expiry >= DateTime.UtcNow;
+            if (string.IsNullOrWhiteSpace(authToken))
+                return null;
+
+            var token = _authTokenRepository.GetAllQuery()
+                .Where(x => x.Token.Equals(authToken))
+                .FirstOrDefault();
+
+            return token;
+        }
+
+        public virtual IAuthToken VerifyAuthTokenAndID(int userID, string authToken)
+        {
+            if (string.IsNullOrWhiteSpace(authToken))
+                return null;
+
+            var token = _authTokenRepository.GetAllQuery()
+                .Where(x => x.UserId == userID)
+                .Where(x => x.Token.Equals(authToken))
+                .FirstOrDefault();
+
+            return token;
+        }
+
+        public virtual IAuthToken VerifyAuthTokenAndUsername(string username, string authToken)
+        {
+            if (string.IsNullOrWhiteSpace(username))
+                return null;
+            if (string.IsNullOrWhiteSpace(authToken))
+                return null;
+
+            // Get the User
+            var user = _userRepository.GetAllQuery().Where(x => x.Username.ToLower().Equals(username.ToLower())).FirstOrDefault();
+            if (user == null)
+                return null;
+
+            // Get the Auth Token
+            var token = _authTokenRepository.GetAllQuery()
+                .Where(x => x.UserId == user.Id)
+                .Where(x => x.Token.Equals(authToken))
+                .FirstOrDefault();
+
+            return token;
+        }
+
+        public virtual string GenerateAuthToken(int id, string username)
+        {
+            string auth = BCrypt.Net.BCrypt.HashString($"{id}{username}{_random.Next()}");
+            return EncryptionHelper.EncodeBase64String(auth);
         }
         #endregion
 
-        #region AuthToken
-        public bool VerifyAuthToken(string authToken)
-        {
-            if (string.IsNullOrWhiteSpace(authToken))
-                return false;
-
-            var user = _userRepository.GetAllQuery()
-                .Where(x => x.AuthToken.Equals(authToken))
-                .FirstOrDefault();
-
-            if (user == null)
-                return false;
-            return true;
-        }
-
-        public bool VerifyAuthTokenAndID(int id, string authToken)
-        {
-            if (string.IsNullOrWhiteSpace(authToken))
-                return false;
-
-            var user = _userRepository.Find(id);
-
-            if (user == null)
-                return false;
-
-            return user.AuthToken.Equals(authToken);
-        }
-
-        public bool VerifyAuthTokenAndUsername(string username, string authToken)
-        {
-            if (string.IsNullOrWhiteSpace(username))
-                return false;
-            if (string.IsNullOrWhiteSpace(authToken))
-                return false;
-
-            var user = _userRepository.GetAllQuery().Where(x => x.Username.ToLower().Equals(username.ToLower())).FirstOrDefault();
-
-            if (user == null)
-                return false;
-
-            return user.AuthToken.Equals(authToken);
-        }
-
-        public string GenerateAuthToken(int id, string username)
-        {
-            string auth = BCrypt.Net.BCrypt.HashString($"{id}{username}{_random.Next()}");
-            return auth;
-        }
+        #region Password
+        protected int WorkFactor { get; set; } = 12;
+        public virtual string HashPassword(string password) => BCrypt.Net.BCrypt.HashPassword(password, WorkFactor + _random.Next(0, 3));
+        public virtual bool VerifyPassword(string password, string hash) => BCrypt.Net.BCrypt.Verify(password, hash);
         #endregion
 
         #region Validations
-        public bool ValidateUsername(string username)
+        public string UsernameRegex { get; set; } = @"^[a-zA-Z0-9\s]";
+        public virtual bool ValidateUsername(string username)
         {
             if (!IntHelpers.IsBetween(username.Length, 1, 40))
                 return false;
 
-            if (!Regex.IsMatch(username, @"^[a-zA-Z0-9\s]"))
+            if (!Regex.IsMatch(username, UsernameRegex))
                 return false;
 
             return true;
         }
 
-        public bool ValidateEmail(string email)
+        public string EmailRegex { get; set; } = @"^[\w!#$%&'*+/=?`{|}~^-]+(?:\.[!#$%&'*+/=?`{|}~^-]+)*@(?:[A-Z0-9-]+\.)+[A-Z]{2,6}$";
+        public virtual bool ValidateEmail(string email)
         {
-            if (Regex.IsMatch(email, @"^[\w!#$%&'*+/=?`{|}~^-]+(?:\.[!#$%&'*+/=?`{|}~^-]+)*@(?:[A-Z0-9-]+\.)+[A-Z]{2,6}$"))
+            if (Regex.IsMatch(email, EmailRegex))
                 return false;
             return true;
         }
 
-        public const PasswordScore MinimumPasswordStrength = PasswordScore.Medium;
-        public bool ValidatePassword(string password)
+        public PasswordScore MinimumPasswordStrength { get; set; } = PasswordScore.Medium;
+        public virtual bool ValidatePassword(string password)
         {
             PasswordScore passwordStrength = CheckPasswordStrength(password);
             Debug.WriteLine($"{passwordStrength.ToString()}");
@@ -113,7 +116,8 @@ namespace KillerrinToolkit.Authentication.Services
         }
         #endregion
 
-        public PasswordScore CheckPasswordStrength(string password)
+        public virtual void FakeHash() { BCrypt.Net.BCrypt.HashPassword("", WorkFactor); }
+        public virtual PasswordScore CheckPasswordStrength(string password)
         {
             int score = 0;
 
@@ -146,5 +150,11 @@ namespace KillerrinToolkit.Authentication.Services
             Debug.WriteLine($"Password: {password}, Length: {password.Length}, Score: {score}");
             return (PasswordScore)score;
         }
+        public virtual bool IsExpired(DateTime? utcExpiry)
+        {
+            if (utcExpiry == null) return false;
+            return utcExpiry >= DateTime.UtcNow;
+        }
+
     }
 }

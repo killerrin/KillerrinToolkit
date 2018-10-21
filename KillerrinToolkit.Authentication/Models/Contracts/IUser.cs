@@ -1,31 +1,29 @@
-﻿using Newtonsoft.Json;
+﻿using KillerrinToolkit.EFCore.Contracts;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace KillerrinToolkit.Authentication.Models
+namespace KillerrinToolkit.Authentication.Models.Contracts
 {
-    public interface IUser
+    public interface IUser : IDBModelBase<int>
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        int ID { get; set; }
-
+        [Required]
         string Username { get; set; }
 
+        [Required]
         [EmailAddress]
         [DataType(DataType.EmailAddress)]
         string Email { get; set; }
 
-        DateTime? Expiry { get; set; }
-
+        [Required]
         [DataType(DataType.Password)]
         [JsonIgnore]
         string PasswordHash { get; set; }
 
-        [JsonIgnore]
-        string AuthToken { get; set; }
+        [DataType(DataType.DateTime)]
+        DateTime? PasswordExpiry { get; set; }
     }
 }

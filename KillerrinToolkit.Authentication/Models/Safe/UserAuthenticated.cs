@@ -1,9 +1,9 @@
 ﻿using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
 
-namespace KillerrinToolkit.Authentication.Models
+namespace KillerrinToolkit.Authentication.Models.Safe
 {
-    public class UserGet
+    public class UserAuthenticated
     {
         [Required]
         public int ID { get; set; }
@@ -12,8 +12,6 @@ namespace KillerrinToolkit.Authentication.Models
         public string Username { get; set; }
 
         [Required]
-        [EmailAddress]
-        [DataType(DataType.EmailAddress)]
-        public string Email { get; set; }
+        public string AuthToken { get; set; }
     }
 }
