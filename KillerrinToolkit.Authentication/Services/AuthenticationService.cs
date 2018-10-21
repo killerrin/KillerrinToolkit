@@ -73,7 +73,7 @@ namespace KillerrinToolkit.Authentication.Services
 
         public virtual string GenerateAuthToken(int id, string username)
         {
-            string auth = BCrypt.Net.BCrypt.HashString($"{id}{username}{_random.Next()}");
+            string auth = BCrypt.Net.BCrypt.HashString($"{_random.Next()}{id}{_random.Next()}{username}{_random.Next()}");
             return EncryptionHelper.EncodeBase64String(auth);
         }
         #endregion
