@@ -71,7 +71,12 @@ namespace KillerrinToolkit.Authentication.Services
             return token;
         }
 
-        public virtual string GenerateAuthToken(int id, string username)
+        public virtual string GenerateAuthTokenString()
+        {
+            string auth = BCrypt.Net.BCrypt.HashString($"{_random.Next()}{Guid.NewGuid()}{_random.Next()}");
+            return EncryptionHelper.EncodeBase64String(auth);
+        }
+        public virtual string GenerateAuthTokenString(int id, string username)
         {
             string auth = BCrypt.Net.BCrypt.HashString($"{_random.Next()}{id}{_random.Next()}{username}{_random.Next()}");
             return EncryptionHelper.EncodeBase64String(auth);
