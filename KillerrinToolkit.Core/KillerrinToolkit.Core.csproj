@@ -2,6 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/killerrin/KillerrinToolkit</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/killerrin/KillerrinToolkit</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <NeutralLanguage>en-CA</NeutralLanguage>
+    <PackageLicenseUrl>https://github.com/killerrin/KillerrinToolkit/blob/master/LICENSE</PackageLicenseUrl>
+    <Copyright>Andrew Godfroy</Copyright>
+    <Authors>Andrew Godfroy</Authors>
+    <PackageId>KillerrinToolkit.Core</PackageId>
   </PropertyGroup>
 
 </Project>
