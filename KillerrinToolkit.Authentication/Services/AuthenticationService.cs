@@ -32,6 +32,9 @@ namespace KillerrinToolkit.Authentication.Services
             return utcExpiry >= DateTime.UtcNow;
         }
 
+        #region Users
+        #endregion
+
         #region AuthToken
         public virtual bool VerifyAuthToken(string authToken, out IAuthToken authenticationToken)
         {
@@ -100,9 +103,7 @@ namespace KillerrinToolkit.Authentication.Services
         }
         #endregion
 
-        #region Password
         public virtual string HashPassword(string password) => BCrypt.Net.BCrypt.HashPassword(password, WorkFactor + _random.Next(0, 3));
         public virtual bool VerifyPassword(string password, string hash) => BCrypt.Net.BCrypt.Verify(password, hash);
-        #endregion
     }
 }
