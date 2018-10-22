@@ -58,17 +58,26 @@ namespace KillerrinToolkit.Authentication.Services
                 return null;
 
             // Get the User
-            var user = _userRepository.GetAllQuery().Where(x => x.Username.ToLower().Equals(username.ToLower())).FirstOrDefault();
+            var user = _userRepository.GetAllQuery().Where(x => x.Username.Equals(username)).FirstOrDefault();
             if (user == null)
                 return null;
 
-            // Get the Auth Token
-            var token = _authTokenRepository.GetAllQuery()
-                .Where(x => x.UserId == user.Id)
-                .Where(x => x.Token.Equals(authToken))
-                .FirstOrDefault();
+            return VerifyAuthTokenAndID(user.Id, authToken);
+        }
 
-            return token;
+        public virtual IAuthToken VerifyAuthTokenAndEmail(string email, string authToken)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                return null;
+            if (string.IsNullOrWhiteSpace(authToken))
+                return null;
+
+            // Get the User
+            var user = _userRepository.GetAllQuery().Where(x => x.Email.Equals(email)).FirstOrDefault();
+            if (user == null)
+                return null;
+
+            return VerifyAuthTokenAndID(user.Id, authToken);
         }
 
         public virtual string GenerateAuthTokenString()

@@ -1,10 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using KillerrinToolkit.EFCore.Contracts;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace KillerrinToolkit.EFCore.Contracts
+namespace KillerrinToolkit.EFCore.Repositories
 {
     public class GenericRepository<T> : RepositoryBase<T> where T : class
     {
