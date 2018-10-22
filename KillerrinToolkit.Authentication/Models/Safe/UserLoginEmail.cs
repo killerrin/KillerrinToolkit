@@ -13,5 +13,7 @@ namespace KillerrinToolkit.Authentication.Models.Safe
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+
+        public bool IsEmpty() { return string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(Password); }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace KillerrinToolkit.Authentication.Models.Safe
@@ -13,5 +14,9 @@ namespace KillerrinToolkit.Authentication.Models.Safe
 
         [Required]
         public string AuthToken { get; set; }
+
+        [Required]
+        [DataType(DataType.DateTime)]
+        public DateTime AuthTokenExpiry { get; set; }
     }
 }
