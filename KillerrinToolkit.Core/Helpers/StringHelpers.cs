@@ -41,5 +41,29 @@ namespace KillerrinToolkit.Core.Helpers
             double Similarity = (double)(100 * (strCommon.Count() * 2)) / (splitString1.Length + splitString2.Length);
             return Similarity;
         }
+        
+        /// <summary>
+        /// Truncatess a given string to a given length
+        /// </summary>
+        /// <param name="value">The string to be truncated</param>
+        /// <param name="maxLength">The maximum length of the string</param>
+        /// <param name="trimCutWords">Whether the algorithm will trim out words which are cut in half</param>
+        /// <returns></returns>
+        public static string Truncate(this string value, int maxLength, bool trimCutWords = false)
+        {
+            if (string.IsNullOrWhiteSpace(value)) return "";
+            if (maxLength <= 0) return "";
+            if (value.Length <= maxLength) return value;
+
+            var outputString = value.Substring(0, maxLength);
+            if (trimCutWords)
+            {
+                int endingWhiteSpace = outputString.LastIndexOf(' ');
+                if (endingWhiteSpace == -1) return "";
+                outputString = value.Substring(0, endingWhiteSpace);
+            }
+
+            return outputString;
+        }
     }
 }
