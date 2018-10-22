@@ -21,5 +21,11 @@ namespace KillerrinToolkit.Core.Helpers
 
             return enums;
         }
+        
+        public static int Count(this Enum e)
+        {
+            var names = Enum.GetNames(e.GetType());
+            return names.Length;
+        }
     }
 }
