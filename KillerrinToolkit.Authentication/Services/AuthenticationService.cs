@@ -25,59 +25,59 @@ namespace KillerrinToolkit.Authentication.Services
         }
 
         #region AuthToken
-        public virtual IAuthToken VerifyAuthToken(string authToken)
+        public virtual bool VerifyAuthToken(string authToken, out IAuthToken authenticationToken)
         {
-            if (string.IsNullOrWhiteSpace(authToken))
-                return null;
+            authenticationToken = null;
+            if (string.IsNullOrWhiteSpace(authToken)) return false;
 
             var token = _authTokenRepository.GetAllQuery()
                 .Where(x => x.Token.Equals(authToken))
                 .FirstOrDefault();
 
-            return token;
+            authenticationToken = token;
+            return token != null;
         }
 
-        public virtual IAuthToken VerifyAuthTokenAndID(int userID, string authToken)
+        public virtual bool VerifyAuthTokenAndID(int userID, string authToken, out IAuthToken authenticationToken)
         {
-            if (string.IsNullOrWhiteSpace(authToken))
-                return null;
+            authenticationToken = null;
+            if (string.IsNullOrWhiteSpace(authToken)) return false;
 
             var token = _authTokenRepository.GetAllQuery()
                 .Where(x => x.UserId == userID)
                 .Where(x => x.Token.Equals(authToken))
                 .FirstOrDefault();
 
-            return token;
+            authenticationToken = token;
+            return token != null;
         }
 
-        public virtual IAuthToken VerifyAuthTokenAndUsername(string username, string authToken)
+        public virtual bool VerifyAuthTokenAndUsername(string username, string authToken, out IAuthToken authenticationToken)
         {
-            if (string.IsNullOrWhiteSpace(username))
-                return null;
-            if (string.IsNullOrWhiteSpace(authToken))
-                return null;
+            authenticationToken = null;
+            if (string.IsNullOrWhiteSpace(username)) return false;
+            if (string.IsNullOrWhiteSpace(authToken)) return false;
 
             // Get the User
             var user = _userRepository.GetAllQuery().Where(x => x.Username.Equals(username)).FirstOrDefault();
             if (user == null)
-                return null;
+                return false;
 
-            return VerifyAuthTokenAndID(user.Id, authToken);
+            return VerifyAuthTokenAndID(user.Id, authToken, out authenticationToken);
         }
 
-        public virtual IAuthToken VerifyAuthTokenAndEmail(string email, string authToken)
+        public virtual bool VerifyAuthTokenAndEmail(string email, string authToken, out IAuthToken authenticationToken)
         {
-            if (string.IsNullOrWhiteSpace(email))
-                return null;
-            if (string.IsNullOrWhiteSpace(authToken))
-                return null;
+            authenticationToken = null;
+            if (string.IsNullOrWhiteSpace(email)) return false;
+            if (string.IsNullOrWhiteSpace(authToken)) return false;
 
             // Get the User
             var user = _userRepository.GetAllQuery().Where(x => x.Email.Equals(email)).FirstOrDefault();
             if (user == null)
-                return null;
+                return false;
 
-            return VerifyAuthTokenAndID(user.Id, authToken);
+            return VerifyAuthTokenAndID(user.Id, authToken, out authenticationToken);
         }
 
         public virtual string GenerateAuthTokenString()
