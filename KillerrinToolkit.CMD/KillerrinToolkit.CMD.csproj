@@ -2,6 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Andrew Godfroy</Authors>
+    <Company>Andrew Godfroy</Company>
+    <Copyright>Andrew Godfroy</Copyright>
+    <PackageLicenseUrl>https://github.com/killerrin/KillerrinToolkit/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/killerrin/KillerrinToolkit</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/killerrin/KillerrinToolkit</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <NeutralLanguage>English (Canada)</NeutralLanguage>
   </PropertyGroup>
 
 </Project>

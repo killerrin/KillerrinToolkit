@@ -5,7 +5,7 @@ using System.Text;
 
 namespace KillerrinToolkit.Core.Helpers
 {
-    public class DebugHelpers
+    public static class DebugHelpers
     {
         public static bool DebugMode { get { return Debugger.IsAttached; } }
         public static bool DebugConditional
@@ -24,5 +24,8 @@ namespace KillerrinToolkit.Core.Helpers
         {
             Debug.WriteLine("GC: TOTAL MEMORY {0}", GC.GetTotalMemory(false));
         }
+
+        public static int Microseconds(this Stopwatch watch) { return (int)(watch.ElapsedTicks * 1.0e6 / Stopwatch.Frequency + 0.4999); }
+        public static int Nanoseconds(this Stopwatch watch) { return (int)(watch.ElapsedTicks * 1.0e9 / Stopwatch.Frequency + 0.4999); }
     }
 }
