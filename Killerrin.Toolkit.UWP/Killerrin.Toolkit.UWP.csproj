@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D449D632-EAA2-4289-8654-6599B6D933B0}</ProjectGuid>
+    <ProjectGuid>{D3BECDE0-A548-4A52-8D88-9C502AA4D2F9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KillerrinToolkit.UWP</RootNamespace>
-    <AssemblyName>KillerrinToolkit.UWP</AssemblyName>
+    <RootNamespace>Killerrin.Toolkit.UWP</RootNamespace>
+    <AssemblyName>Killerrin.Toolkit.UWP</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17134.0</TargetPlatformVersion>
@@ -132,7 +132,6 @@
       <DependentUpon>UserAccountButton.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
-    <Compile Include="Converters\ShorthandCurrencyConverter.cs" />
     <Compile Include="Converters\EnumSpaceConverter.cs" />
     <Compile Include="Converters\EnumStringConverter.cs" />
     <Compile Include="Converters\InverseBooleanToVisibilityConverter.cs" />
@@ -140,6 +139,7 @@
     <Compile Include="Converters\ObjectStringConverter.cs" />
     <Compile Include="Converters\OppositeBooleanConverter.cs" />
     <Compile Include="Converters\RelativeDateTimeConverter.cs" />
+    <Compile Include="Converters\ShorthandCurrencyConverter.cs" />
     <Compile Include="Converters\StringPathToBitmapImageConverter.cs" />
     <Compile Include="CortanaTools.cs" />
     <Compile Include="Helpers\AdaptiveTriggerConsts.cs" />
@@ -175,7 +175,7 @@
     <Compile Include="UserProfile\PersonalizationManagerBase.cs" />
     <Compile Include="UserProfile\TileManager.cs" />
     <Compile Include="UserProfile\WallpaperManager.cs" />
-    <EmbeddedResource Include="Properties\KillerrinToolkit.UWP.rd.xml" />
+    <EmbeddedResource Include="Properties\Killerrin.Toolkit.UWP.rd.xml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
@@ -225,10 +225,10 @@
     <None Include="Temporary\README.md" />
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="WindowsDesktop, Version=10.0.15063.0">
+    <SDKReference Include="WindowsDesktop, Version=10.0.17134.0">
       <Name>Windows Desktop Extensions for the UWP</Name>
     </SDKReference>
-    <SDKReference Include="WindowsMobile, Version=10.0.14393.0">
+    <SDKReference Include="WindowsMobile, Version=10.0.17134.0">
       <Name>Windows Mobile Extensions for the UWP</Name>
     </SDKReference>
   </ItemGroup>

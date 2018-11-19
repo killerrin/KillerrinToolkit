@@ -7,8 +7,8 @@
     <ProjectGuid>{E6C69717-B489-444A-935F-7111FDEA40FC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KillerrinToolkit.WPF</RootNamespace>
-    <AssemblyName>KillerrinToolkit.WPF</AssemblyName>
+    <RootNamespace>Killerrin.Toolkit.WPF</RootNamespace>
+    <AssemblyName>Killerrin.Toolkit.WPF</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
