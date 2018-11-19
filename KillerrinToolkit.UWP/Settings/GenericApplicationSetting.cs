@@ -1,6 +1,6 @@
 ﻿using Windows.Storage;
 
-namespace KillerrinToolkit.UWP.Settings
+namespace Killerrin.Toolkit.UWP.Settings
 {
     public class GenericApplicationSetting<T> : ApplicationSettingBase<T>
     {

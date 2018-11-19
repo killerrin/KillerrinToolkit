@@ -1,8 +1,8 @@
-﻿using KillerrinToolkit.Authentication.Models;
-using KillerrinToolkit.Authentication.Models.Contracts;
-using KillerrinToolkit.Authentication.Models.Enums;
-using KillerrinToolkit.Core.Helpers;
-using KillerrinToolkit.EFCore.Contracts;
+﻿using Killerrin.Toolkit.Authentication.Models;
+using Killerrin.Toolkit.Authentication.Models.Contracts;
+using Killerrin.Toolkit.Authentication.Models.Enums;
+using Killerrin.Toolkit.Core.Helpers;
+using Killerrin.Toolkit.EFCore.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace KillerrinToolkit.Authentication.Services
+namespace Killerrin.Toolkit.Authentication.Services
 {
     public class AuthenticationService
     {

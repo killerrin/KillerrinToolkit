@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 
-namespace KillerrinToolkit.UWP.Services
+namespace Killerrin.Toolkit.UWP.Services
 {
     public class SplitViewService : ServiceBase
     {

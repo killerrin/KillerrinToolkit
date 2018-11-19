@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 
-namespace KillerrinToolkit.WPF.Services
+namespace Killerrin.Toolkit.WPF.Services
 {
     public class TranslationService : INotifyPropertyChanged
     {

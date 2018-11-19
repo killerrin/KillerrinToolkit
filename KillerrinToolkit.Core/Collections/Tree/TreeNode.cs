@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KillerrinToolkit.Core.Collections.Tree
+namespace Killerrin.Toolkit.Core.Collections.Tree
 {
     public class TreeNode<K, T> : IEnumerable<T> where K : IComparable
     {

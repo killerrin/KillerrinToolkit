@@ -8,7 +8,7 @@ using Windows.Storage.Streams;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
-namespace KillerrinToolkit.UWP.Services
+namespace Killerrin.Toolkit.UWP.Services
 {
     public class MediaService : ServiceBase
     {

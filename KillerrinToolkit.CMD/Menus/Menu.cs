@@ -1,4 +1,4 @@
-﻿using KillerrinToolkit.CMD.Managers;
+﻿using Killerrin.Toolkit.CMD.Managers;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KillerrinToolkit.CMD.Menus
+namespace Killerrin.Toolkit.CMD.Menus
 {
     public abstract class Menu
     {

@@ -1,7 +1,7 @@
-﻿using KillerrinToolkit.Core.Models;
+﻿using Killerrin.Toolkit.Core.Models;
 using Windows.Storage;
 
-namespace KillerrinToolkit.UWP.Settings
+namespace Killerrin.Toolkit.UWP.Settings
 {
     public abstract class ApplicationSettingBase<T> : ModelBase, IApplicationSetting<T>
     {

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Media.Imaging;
 
-namespace KillerrinToolkit.UWP.Converters
+namespace Killerrin.Toolkit.UWP.Converters
 {
     public class StringPathToBitmapImageConverter : IValueConverter
     {

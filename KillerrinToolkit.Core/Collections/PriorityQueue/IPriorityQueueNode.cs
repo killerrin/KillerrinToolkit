@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KillerrinToolkit.Core.Collections.PriorityQueue
+namespace Killerrin.Toolkit.Core.Collections.PriorityQueue
 {
     public interface IPriorityQueueNode<K, T> : IComparable<IPriorityQueueNode<K, T>>
         where K : IComparable

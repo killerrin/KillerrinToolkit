@@ -7,7 +7,7 @@ using Windows.UI.Xaml.Media;
 
 // The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
 
-namespace KillerrinToolkit.UWP.Controls.Rating
+namespace Killerrin.Toolkit.UWP.Controls.Rating
 {
     public sealed partial class Star : UserControl
     {

@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Store;
 using Windows.UI.Core;
-using KillerrinToolkit.Core.Helpers;
+using Killerrin.Toolkit.Core.Helpers;
 
-namespace KillerrinToolkit.UWP.Store
+namespace Killerrin.Toolkit.UWP.Store
 {
     public class InAppPurchaseLegacyManager : InAppPurchaseManagerBase
     {

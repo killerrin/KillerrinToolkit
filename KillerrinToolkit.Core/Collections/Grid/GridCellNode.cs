@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Drawing;
 
-namespace KillerrinToolkit.Core.Collections.Grid
+namespace Killerrin.Toolkit.Core.Collections.Grid
 {
     public class GridCellNode<T>
     {

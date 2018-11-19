@@ -8,9 +8,9 @@ using Windows.Services.Store;
 using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Core;
-using KillerrinToolkit.Core.Helpers;
+using Killerrin.Toolkit.Core.Helpers;
 
-namespace KillerrinToolkit.UWP.Store
+namespace Killerrin.Toolkit.UWP.Store
 {
     public class InAppPurchaseManager : InAppPurchaseManagerBase
     {

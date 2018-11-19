@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KillerrinToolkit.Core.Models
+namespace Killerrin.Toolkit.Core.Models
 {
     public class ObservableKeyValuePair<K, V> : ModelBase
     {

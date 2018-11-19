@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Foundation;
 
-namespace KillerrinToolkit.UWP.Store
+namespace Killerrin.Toolkit.UWP.Store
 {
     public abstract class InAppPurchaseManagerBase : IDisposable
     {

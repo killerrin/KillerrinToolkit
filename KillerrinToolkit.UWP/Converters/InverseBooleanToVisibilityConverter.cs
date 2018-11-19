@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Data;
 
-namespace KillerrinToolkit.UWP.Converters
+namespace Killerrin.Toolkit.UWP.Converters
 {
     public class InverseBooleanToVisibilityConverter : IValueConverter
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace KillerrinToolkit.Core.Helpers
+namespace Killerrin.Toolkit.Core.Helpers
 {
     public static class EnumHelpers
     {

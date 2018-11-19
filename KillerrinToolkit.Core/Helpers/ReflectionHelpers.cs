@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KillerrinToolkit.Core.Helpers
+namespace Killerrin.Toolkit.Core.Helpers
 {
     /// <summary>
     /// https://stackoverflow.com/questions/1196991/get-property-value-from-string-using-reflection-in-c-sharp

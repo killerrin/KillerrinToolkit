@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 
-namespace KillerrinToolkit.Core.Serializers
+namespace Killerrin.Toolkit.Core.Serializers
 {
     public static class UTF8StringSerializer
     {

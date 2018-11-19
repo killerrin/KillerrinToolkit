@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Windows.Foundation.Metadata;
 using Windows.Services.Store;
 
-namespace KillerrinToolkit.UWP.Store
+namespace Killerrin.Toolkit.UWP.Store
 {
     public static class InAppPurchaseManagerFactory
     {

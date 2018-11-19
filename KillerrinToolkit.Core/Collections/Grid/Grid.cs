@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 
-namespace KillerrinToolkit.Core.Collections.Grid
+namespace Killerrin.Toolkit.Core.Collections.Grid
 {
     public class Grid<T> : IEnumerable<GridCellNode<T>>
     {

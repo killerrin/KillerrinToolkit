@@ -8,7 +8,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
-namespace KillerrinToolkit.UWP.Services
+namespace Killerrin.Toolkit.UWP.Services
 {
     public class NavigationService : ServiceBase
     {

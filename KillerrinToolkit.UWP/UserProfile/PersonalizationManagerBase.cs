@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Windows.Storage;
 using Windows.System.UserProfile;
 
-namespace KillerrinToolkit.UWP.UserProfile
+namespace Killerrin.Toolkit.UWP.UserProfile
 {
     public abstract class PersonalizationManagerBase
     {

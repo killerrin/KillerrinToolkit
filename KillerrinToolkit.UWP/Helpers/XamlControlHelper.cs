@@ -1,4 +1,4 @@
-﻿using KillerrinToolkit.UWP.Controls;
+﻿using Killerrin.Toolkit.UWP.Controls;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
-namespace KillerrinToolkit.UWP.Helpers
+namespace Killerrin.Toolkit.UWP.Helpers
 {
     public static class XamlControlHelper
     {

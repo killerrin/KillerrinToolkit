@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using KillerrinToolkit.CMD.Menus;
+using Killerrin.Toolkit.CMD.Menus;
 
-namespace KillerrinToolkit.CMD.Managers
+namespace Killerrin.Toolkit.CMD.Managers
 {
     public class NavigationManager
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KillerrinToolkit.Core.Models
+namespace Killerrin.Toolkit.Core.Models
 {
     public struct ProgressData<T>
     {

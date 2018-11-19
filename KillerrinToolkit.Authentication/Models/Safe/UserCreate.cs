@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
 
-namespace KillerrinToolkit.Authentication.Models.Safe
+namespace Killerrin.Toolkit.Authentication.Models.Safe
 {
     public class UserCreate
     {

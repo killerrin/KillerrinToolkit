@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace KillerrinToolkit.Core.Collections.BlueRajaPriorityQueue
+namespace Killerrin.Toolkit.Core.Collections.BlueRajaPriorityQueue
 {
     /// <summary>
     /// The IPriorityQueue interface.  This is mainly here for purists, and in case I decide to add more implementations later.

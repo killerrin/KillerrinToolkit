@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Background;
 
-namespace KillerrinToolkit.UWP.BackgroundTasks
+namespace Killerrin.Toolkit.UWP.BackgroundTasks
 {
     public abstract class BackgroundTaskHelperBase
     {

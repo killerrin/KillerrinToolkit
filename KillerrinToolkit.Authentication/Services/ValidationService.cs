@@ -1,12 +1,12 @@
-﻿using KillerrinToolkit.Authentication.Models.Enums;
-using KillerrinToolkit.Core.Helpers;
+﻿using Killerrin.Toolkit.Authentication.Models.Enums;
+using Killerrin.Toolkit.Core.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace KillerrinToolkit.Authentication.Services
+namespace Killerrin.Toolkit.Authentication.Services
 {
     public class ValidationService
     {

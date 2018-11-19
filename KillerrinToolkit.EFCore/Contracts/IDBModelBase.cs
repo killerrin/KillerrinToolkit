@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace KillerrinToolkit.EFCore.Contracts
+namespace Killerrin.Toolkit.EFCore.Contracts
 {
     public interface IDBModelBase<T>
     {

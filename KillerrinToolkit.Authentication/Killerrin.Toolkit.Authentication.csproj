@@ -19,8 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\KillerrinToolkit.Core\KillerrinToolkit.Core.csproj" />
-    <ProjectReference Include="..\KillerrinToolkit.EFCore\KillerrinToolkit.EFCore.csproj" />
+    <ProjectReference Include="..\KillerrinToolkit.Core\Killerrin.Toolkit.Core.csproj" />
+    <ProjectReference Include="..\KillerrinToolkit.EFCore\Killerrin.Toolkit.EFCore.csproj" />
   </ItemGroup>
 
 </Project>

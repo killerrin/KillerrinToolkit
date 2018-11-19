@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Email;
 
-namespace KillerrinToolkit.UWP
+namespace Killerrin.Toolkit.UWP
 {
     public partial class KillerrinApplicationData
     {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Windows.Foundation.Collections;
 using Windows.Storage;
 
-namespace KillerrinToolkit.UWP.Settings
+namespace Killerrin.Toolkit.UWP.Settings
 {
     public interface IApplicationSetting<T>
     {

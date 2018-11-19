@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace KillerrinToolkit.Authentication.Models.Enums
+namespace Killerrin.Toolkit.Authentication.Models.Enums
 {
     public enum PasswordScore
     {

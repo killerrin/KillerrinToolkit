@@ -1,4 +1,4 @@
-﻿using KillerrinToolkit.UWP.Controls;
+﻿using Killerrin.Toolkit.UWP.Controls;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml;
 
-namespace KillerrinToolkit.UWP.Services
+namespace Killerrin.Toolkit.UWP.Services
 {
     public class ProgressService : ServiceBase
     {

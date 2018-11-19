@@ -1,4 +1,4 @@
-﻿namespace KillerrinToolkit.Core.Collections.BlueRajaPriorityQueue
+﻿namespace Killerrin.Toolkit.Core.Collections.BlueRajaPriorityQueue
 {
     public class FastPriorityQueueNode
     {

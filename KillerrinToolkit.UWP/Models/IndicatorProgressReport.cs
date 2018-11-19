@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KillerrinToolkit.UWP.Models
+namespace Killerrin.Toolkit.UWP.Models
 {
     public struct IndicatorProgressReport
     {

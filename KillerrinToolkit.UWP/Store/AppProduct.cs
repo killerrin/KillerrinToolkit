@@ -1,11 +1,11 @@
-﻿using KillerrinToolkit.Core.Models;
+﻿using Killerrin.Toolkit.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KillerrinToolkit.UWP.Store
+namespace Killerrin.Toolkit.UWP.Store
 {
     public class AppProduct : ModelBase
     {

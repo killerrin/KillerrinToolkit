@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace KillerrinToolkit.EFCore.Contracts
+namespace Killerrin.Toolkit.EFCore.Contracts
 {
     public abstract class RepositoryBase<T> : IRepository<T> where T : class
     {

@@ -1,4 +1,4 @@
-﻿using KillerrinToolkit.Core.Models;
+﻿using Killerrin.Toolkit.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Windows.Graphics.Display;
 using Windows.UI.Xaml;
 
-namespace KillerrinToolkit.UWP.Helpers
+namespace Killerrin.Toolkit.UWP.Helpers
 {
     public class AdaptiveTriggerConsts : ModelBase, IDisposable
     {

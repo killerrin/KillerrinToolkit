@@ -1,4 +1,4 @@
-﻿using KillerrinToolkit.EFCore.Contracts;
+﻿using Killerrin.Toolkit.EFCore.Contracts;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace KillerrinToolkit.Authentication.Models.Contracts
+namespace Killerrin.Toolkit.Authentication.Models.Contracts
 {
     public interface IUser : IDBModelBase<int>
     {

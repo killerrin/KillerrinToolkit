@@ -1,11 +1,11 @@
-﻿using KillerrinToolkit.Authentication.Models;
-using KillerrinToolkit.EFCore.Contracts;
+﻿using Killerrin.Toolkit.Authentication.Models;
+using Killerrin.Toolkit.EFCore.Contracts;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace KillerrinToolkit.Authentication.Repositories
+namespace Killerrin.Toolkit.Authentication.Repositories
 {
     public class UserRepository<C> : RepositoryBase<User> where C : DbContext
     {

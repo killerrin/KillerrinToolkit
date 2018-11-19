@@ -1,5 +1,5 @@
 ﻿using BCrypt.Net;
-using KillerrinToolkit.Authentication.Models.Contracts;
+using Killerrin.Toolkit.Authentication.Models.Contracts;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace KillerrinToolkit.Authentication.Models
+namespace Killerrin.Toolkit.Authentication.Models
 {
     public class User : IUser
     {

@@ -1,13 +1,13 @@
 ﻿using GalaSoft.MvvmLight.Command;
-using KillerrinToolkit.Core.Helpers;
-using KillerrinToolkit.Core.Models;
+using Killerrin.Toolkit.Core.Helpers;
+using Killerrin.Toolkit.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KillerrinToolkit.WPF.Models
+namespace Killerrin.Toolkit.WPF.Models
 {
     public class NumberBinding<T> : ModelBase where T : IComparable<T>
     {

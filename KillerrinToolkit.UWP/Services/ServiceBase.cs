@@ -1,4 +1,4 @@
-﻿using KillerrinToolkit.Core.Models;
+﻿using Killerrin.Toolkit.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KillerrinToolkit.UWP.Services
+namespace Killerrin.Toolkit.UWP.Services
 {
     public abstract class ServiceBase : ModelBase
     {

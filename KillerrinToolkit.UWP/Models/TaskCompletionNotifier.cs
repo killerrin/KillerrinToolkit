@@ -6,7 +6,7 @@ using System;
 using System.ComponentModel;
 using System.Threading.Tasks;
 
-namespace KillerrinToolkit.UWP.Models
+namespace Killerrin.Toolkit.UWP.Models
 {
     public sealed class NotifyTaskCompletion<TResult> : INotifyPropertyChanged
     {

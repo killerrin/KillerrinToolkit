@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KillerrinToolkit.CMD.Menus
+namespace Killerrin.Toolkit.CMD.Menus
 {
     /// <summary>
     /// Blank MenuItem used to populate the Menu with Text

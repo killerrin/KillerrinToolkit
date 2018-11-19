@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace KillerrinToolkit.Core.Games.Randomized
+namespace Killerrin.Toolkit.Core.Games.Randomized
 {
     public class GuessTheNumber : Randomizer
     {

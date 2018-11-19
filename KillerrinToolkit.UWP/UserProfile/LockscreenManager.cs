@@ -1,4 +1,4 @@
-﻿using KillerrinToolkit.Core.Helpers;
+﻿using Killerrin.Toolkit.Core.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -12,7 +12,7 @@ using Windows.System;
 using Windows.System.UserProfile;
 using Windows.UI.Xaml.Media.Imaging;
 
-namespace KillerrinToolkit.UWP.UserProfile
+namespace Killerrin.Toolkit.UWP.UserProfile
 {
     public class LockscreenManager : PersonalizationManagerBase
     {

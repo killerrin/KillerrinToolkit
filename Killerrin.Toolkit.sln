@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KillerrinToolkit.Core", "KillerrinToolkit.Core\KillerrinToolkit.Core.csproj", "{00E01AFC-2067-4AD6-BC49-3C5F1FA41DFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Killerrin.Toolkit.Core", "KillerrinToolkit.Core\Killerrin.Toolkit.Core.csproj", "{00E01AFC-2067-4AD6-BC49-3C5F1FA41DFD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KillerrinToolkit.EFCore", "KillerrinToolkit.EFCore\KillerrinToolkit.EFCore.csproj", "{7399279C-40AC-46CD-81FC-B73733E9526C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Killerrin.Toolkit.EFCore", "KillerrinToolkit.EFCore\Killerrin.Toolkit.EFCore.csproj", "{7399279C-40AC-46CD-81FC-B73733E9526C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KillerrinToolkit.UWP", "KillerrinToolkit.UWP\KillerrinToolkit.UWP.csproj", "{D449D632-EAA2-4289-8654-6599B6D933B0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Killerrin.Toolkit.UWP", "KillerrinToolkit.UWP\Killerrin.Toolkit.UWP.csproj", "{D449D632-EAA2-4289-8654-6599B6D933B0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KillerrinToolkit.Authentication", "KillerrinToolkit.Authentication\KillerrinToolkit.Authentication.csproj", "{2C944E9C-0B49-415D-870E-2C1C884C4E01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Killerrin.Toolkit.Authentication", "KillerrinToolkit.Authentication\Killerrin.Toolkit.Authentication.csproj", "{2C944E9C-0B49-415D-870E-2C1C884C4E01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KillerrinToolkit.CMD", "KillerrinToolkit.CMD\KillerrinToolkit.CMD.csproj", "{8FE1A5D0-870D-458E-AEED-02994D0E9E64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Killerrin.Toolkit.CMD", "KillerrinToolkit.CMD\Killerrin.Toolkit.CMD.csproj", "{8FE1A5D0-870D-458E-AEED-02994D0E9E64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KillerrinToolkit.WPF", "KillerrinToolkit.WPF\KillerrinToolkit.WPF.csproj", "{E6C69717-B489-444A-935F-7111FDEA40FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Killerrin.Toolkit.WPF", "KillerrinToolkit.WPF\Killerrin.Toolkit.WPF.csproj", "{E6C69717-B489-444A-935F-7111FDEA40FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

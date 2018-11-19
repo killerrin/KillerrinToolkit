@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 
-namespace KillerrinToolkit.Core.Helpers
+namespace Killerrin.Toolkit.Core.Helpers
 {
     public static class DebugHelpers
     {

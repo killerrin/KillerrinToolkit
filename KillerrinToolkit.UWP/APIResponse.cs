@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace KillerrinToolkit.UWP
+namespace Killerrin.Toolkit.UWP
 {
     public enum APIResponse
     {

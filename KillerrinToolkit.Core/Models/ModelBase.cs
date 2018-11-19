@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace KillerrinToolkit.Core.Models
+namespace Killerrin.Toolkit.Core.Models
 {
     public abstract class ModelBase : INotifyPropertyChanged
     {

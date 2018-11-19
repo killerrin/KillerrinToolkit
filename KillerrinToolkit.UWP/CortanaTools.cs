@@ -1,4 +1,4 @@
-﻿using KillerrinToolkit.Core.Helpers;
+﻿using Killerrin.Toolkit.Core.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -9,7 +9,7 @@ using Windows.Media.SpeechRecognition;
 using Windows.Media.SpeechSynthesis;
 using Windows.UI.Xaml.Controls;
 
-namespace KillerrinToolkit.UWP
+namespace Killerrin.Toolkit.UWP
 {
     public enum CortanaRecognizerState
     {

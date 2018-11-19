@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace KillerrinToolkit.Core.Helpers
+namespace Killerrin.Toolkit.Core.Helpers
 {
     public static class StringHelpers
     {

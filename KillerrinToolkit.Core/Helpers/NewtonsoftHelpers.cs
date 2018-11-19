@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KillerrinToolkit.Core.Helpers
+namespace Killerrin.Toolkit.Core.Helpers
 {
     public static class NewtonsoftHelpers
     {

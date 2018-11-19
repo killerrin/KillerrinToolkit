@@ -1,10 +1,10 @@
-﻿using KillerrinToolkit.Authentication.Models.Contracts;
+﻿using Killerrin.Toolkit.Authentication.Models.Contracts;
 using Newtonsoft.Json;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace KillerrinToolkit.Authentication.Models
+namespace Killerrin.Toolkit.Authentication.Models
 {
     public class AuthToken : IAuthToken
     {

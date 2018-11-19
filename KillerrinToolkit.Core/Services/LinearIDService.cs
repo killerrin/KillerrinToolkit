@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace KillerrinToolkit.Core.Services
+namespace Killerrin.Toolkit.Core.Services
 {
     public class LinearIDService
     {

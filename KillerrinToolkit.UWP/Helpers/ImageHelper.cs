@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Windows.Storage.Streams;
 using Windows.UI.Xaml.Media.Imaging;
 
-namespace KillerrinToolkit.UWP.Helpers
+namespace Killerrin.Toolkit.UWP.Helpers
 {
     public static class ImageHelper
     {

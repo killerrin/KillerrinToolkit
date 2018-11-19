@@ -1,4 +1,4 @@
-﻿namespace KillerrinToolkit.UWP.Store
+﻿namespace Killerrin.Toolkit.UWP.Store
 {
     public enum ProductKind
     {

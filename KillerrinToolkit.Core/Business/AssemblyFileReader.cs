@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KillerrinToolkit.Core.Business
+namespace Killerrin.Toolkit.Core.Business
 {
     public static class AssemblyFileReader
     {

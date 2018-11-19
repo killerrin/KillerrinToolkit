@@ -12,7 +12,7 @@ using Windows.Storage.Search;
 using Windows.Storage.Streams;
 using Windows.System;
 
-namespace KillerrinToolkit.UWP
+namespace Killerrin.Toolkit.UWP
 {
     public enum StorageLocationPrefix
     {

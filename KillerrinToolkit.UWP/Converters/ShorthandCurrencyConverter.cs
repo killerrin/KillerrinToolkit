@@ -1,11 +1,11 @@
-﻿using KillerrinToolkit.Core.Helpers;
+﻿using Killerrin.Toolkit.Core.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Data;
 
-namespace KillerrinToolkit.UWP.Converters
+namespace Killerrin.Toolkit.UWP.Converters
 {
     public class ShorthandCurrencyConverter : IValueConverter
     {

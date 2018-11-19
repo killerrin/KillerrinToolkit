@@ -12,7 +12,7 @@ using Windows.UI.StartScreen;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
 
-namespace KillerrinToolkit.UWP.UserProfile
+namespace Killerrin.Toolkit.UWP.UserProfile
 {
     public class TileImages
     {

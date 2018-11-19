@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
-namespace KillerrinToolkit.Core.Collections.Concurrency
+namespace Killerrin.Toolkit.Core.Collections.Concurrency
 {
     public class ThreadSafeList<T> : IEnumerable<T>
     {
