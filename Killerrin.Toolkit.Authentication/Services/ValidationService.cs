@@ -1,4 +1,5 @@
-﻿using Killerrin.Toolkit.Authentication.Models.Enums;
+﻿using Killerrin.Toolkit.Authentication.Contracts;
+using Killerrin.Toolkit.Authentication.Models.Enums;
 using Killerrin.Toolkit.Core.Helpers;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Text.RegularExpressions;
 
 namespace Killerrin.Toolkit.Authentication.Services
 {
-    public class ValidationService
+    public class ValidationService : IUsernameValidator, IEmailValidator, IPasswordValidator
     {
         public string UsernameRegex { get; set; } = @"^[a-zA-Z0-9\s]";
         public virtual bool ValidateUsername(string username)

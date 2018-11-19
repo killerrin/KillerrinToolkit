@@ -12,6 +12,7 @@
     <RepositoryType>GitHub</RepositoryType>
     <NeutralLanguage>English (Canada)</NeutralLanguage>
     <PackageId>Killerrin.Toolkit.Authentication</PackageId>
+    <Version>1.0.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
