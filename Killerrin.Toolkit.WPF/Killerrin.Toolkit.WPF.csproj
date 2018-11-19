@@ -66,7 +66,7 @@
     <Compile Include="Services\TranslationService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KillerrinToolkit.Core\Killerrin.Toolkit.Core.csproj">
+    <ProjectReference Include="..\Killerrin.Toolkit.Core\Killerrin.Toolkit.Core.csproj">
       <Project>{00E01AFC-2067-4AD6-BC49-3C5F1FA41DFD}</Project>
       <Name>Killerrin.Toolkit.Core</Name>
     </ProjectReference>
