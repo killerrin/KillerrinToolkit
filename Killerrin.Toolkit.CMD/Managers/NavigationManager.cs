@@ -34,7 +34,7 @@ namespace Killerrin.Toolkit.CMD.Managers
         public Menu GoBack()
         {
             // Trigger exit if nothing exists
-            var currentPage = Peek();
+            IMenuNavigationHook currentPage = Peek();
             if (currentPage == null)
             {
                 OnExit?.Invoke(this, new object());
@@ -47,7 +47,7 @@ namespace Killerrin.Toolkit.CMD.Managers
             currentPage.InvokeOnUnloaded(this, new object());
 
             // Resume the previous page
-            var newPage = Peek();
+            IMenuNavigationHook newPage = Peek();
             if (newPage == null)
             {
                 OnExit?.Invoke(this, new object());
@@ -58,12 +58,14 @@ namespace Killerrin.Toolkit.CMD.Managers
             newPage?.InvokeOnLoaded(this, new object());
 
             // Return the new menu
-            return newPage;
+            return newPage as Menu;
         }
         public void Navigate(Menu menu)
         {
+            var iMenu = menu as IMenuNavigationHook;
+
             // Unload the Previous Menu
-            var currentPage = Peek();
+            IMenuNavigationHook currentPage = Peek();
             if (currentPage != null)
             {
                 currentPage.InvokeOnNavigatingFrom(this, new object());
@@ -71,10 +73,10 @@ namespace Killerrin.Toolkit.CMD.Managers
             }
 
             // Load the New Menu
-            menu.InvokeOnNavigatingTo(this, new object());
+            iMenu.InvokeOnNavigatingTo(this, new object());
             m_backStack.Push(menu);
-            menu.InvokeOnNavigated(this, new object());
-            menu.InvokeOnLoaded(this, new object());
+            iMenu.InvokeOnNavigated(this, new object());
+            iMenu.InvokeOnLoaded(this, new object());
         }
     }
 }

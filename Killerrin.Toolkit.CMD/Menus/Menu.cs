@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Killerrin.Toolkit.CMD.Menus
 {
-    public abstract class Menu
+    public abstract class Menu : IMenuNavigationHook
     {
         public enum MenuResultCode
         {
@@ -40,11 +40,11 @@ namespace Killerrin.Toolkit.CMD.Menus
         public event EventHandler<object> OnLoaded;
         public event EventHandler<object> OnNavigatingFrom;
         public event EventHandler<object> OnUnloaded;
-        internal void InvokeOnNavigatingTo(object sender, object args) { OnNavigatingTo?.Invoke(sender, args); }
-        internal void InvokeOnNavigated(object sender, object args) { OnNavigated?.Invoke(sender, args); }
-        internal void InvokeOnLoaded(object sender, object args) { OnLoaded?.Invoke(sender, args); }
-        internal void InvokeOnNavigatingFrom(object sender, object args) { OnNavigatingFrom?.Invoke(sender, args); }
-        internal void InvokeOnUnloaded(object sender, object args) { OnUnloaded?.Invoke(sender, args); }
+        void IMenuNavigationHook.InvokeOnNavigatingTo(object sender, object args) { OnNavigatingTo?.Invoke(sender, args); }
+        void IMenuNavigationHook.InvokeOnNavigated(object sender, object args) { OnNavigated?.Invoke(sender, args); }
+        void IMenuNavigationHook.InvokeOnLoaded(object sender, object args) { OnLoaded?.Invoke(sender, args); }
+        void IMenuNavigationHook.InvokeOnNavigatingFrom(object sender, object args) { OnNavigatingFrom?.Invoke(sender, args); }
+        void IMenuNavigationHook.InvokeOnUnloaded(object sender, object args) { OnUnloaded?.Invoke(sender, args); }
 
         public event EventHandler<string> OnPreMenuRun;
         public event EventHandler<string> OnPostMenuRun;
