@@ -6,9 +6,28 @@ using System.Text;
 
 namespace Killerrin.Toolkit.Core.Models
 {
-    public abstract class ModelBase : INotifyPropertyChanged
+    public interface IModelBase : INotifyPropertyChanging, INotifyPropertyChanged
     {
+        void RaisePropertyChanging([CallerMemberName]string property = "");
+        void RaisePropertyChanged([CallerMemberName]string property = "");
+    }
+
+    public abstract class ModelBase : IModelBase, INotifyPropertyChanging, INotifyPropertyChanged
+    {
+        public event PropertyChangingEventHandler PropertyChanging;
         public event PropertyChangedEventHandler PropertyChanged;
+
+        void IModelBase.RaisePropertyChanging(string property) { RaisePropertyChanging(property); }
+        protected void RaisePropertyChanging([CallerMemberName]string property = "")
+        {
+            try
+            {
+                PropertyChanging?.Invoke(this, new PropertyChangingEventArgs(property));
+            }
+            catch (Exception) { }
+        }
+
+        void IModelBase.RaisePropertyChanged(string property) { RaisePropertyChanged(property); }
         protected void RaisePropertyChanged([CallerMemberName]string property = "")
         {
             try
@@ -17,5 +36,7 @@ namespace Killerrin.Toolkit.Core.Models
             }
             catch (Exception) { }
         }
+
+
     }
 }
