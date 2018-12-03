@@ -10,6 +10,23 @@ namespace Killerrin.Toolkit.Core.Business
 {
     public static class AssemblyFileReader
     {
+        public static Assembly GetCurrentAssembly<T>()
+        {
+            return Assembly.GetAssembly(typeof(T));
+        }
+
+        public static string ResourceNameCreator(string fileNameAndExtension, params string[] namespaceParts)
+        {
+            var resourceName = string.Join(".", namespaceParts);
+            return $"{resourceName}.{fileNameAndExtension}";
+        }
+
+        /// <summary>
+        /// Returns an EmbeddedResource in the Assembly
+        /// </summary>
+        /// <param name="assembly">The Assembly</param>
+        /// <param name="resourceName">The fully qualified Resource Name</param>
+        /// <returns></returns>
         public static List<string> ReadFile(this Assembly assembly, string resourceName)
         {
             List<string> lines = new List<string>();
