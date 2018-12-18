@@ -11,7 +11,7 @@
     <Copyright>Andrew Godfroy</Copyright>
     <Authors>Andrew Godfroy</Authors>
     <PackageId>Killerrin.Toolkit.Core</PackageId>
-    <Version>1.0.0.0</Version>
+    <Version>1.1.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
