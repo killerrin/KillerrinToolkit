@@ -29,7 +29,7 @@ namespace Killerrin.Toolkit.Authentication.Services
         public virtual bool IsExpired(DateTime? utcExpiry)
         {
             if (utcExpiry == null) return false;
-            return utcExpiry >= DateTime.UtcNow;
+            return utcExpiry <= DateTime.UtcNow;
         }
 
         #region Users
