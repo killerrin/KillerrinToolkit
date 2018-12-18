@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Killerrin.Toolkit.CMD.Menus;
+using Killerrin.Toolkit.CMD.Menus.Contracts;
 
 namespace Killerrin.Toolkit.CMD.Managers
 {

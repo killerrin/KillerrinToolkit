@@ -26,7 +26,7 @@ namespace Killerrin.Toolkit.CMD.Menus
         public override void Run()
         {
             SpecialAction?.Invoke();
-            //NavigationManager.Instance.GoBack();
+            NavigationManager.Instance.GoBack();
         }
     }
 }

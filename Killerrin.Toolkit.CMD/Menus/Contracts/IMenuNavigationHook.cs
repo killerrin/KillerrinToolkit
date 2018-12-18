@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Killerrin.Toolkit.CMD.Menus
+namespace Killerrin.Toolkit.CMD.Menus.Contracts
 {
     public interface IMenuNavigationHook
     {

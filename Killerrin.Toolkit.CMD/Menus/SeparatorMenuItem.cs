@@ -21,6 +21,8 @@ namespace Killerrin.Toolkit.CMD.Menus
             Separator = seperator;
             NumberOfTimes = numberOfTimes;
         }
+
+
         public override void Run() { }
     }
 }
