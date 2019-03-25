@@ -10,7 +10,7 @@ namespace Killerrin.Toolkit.Core.Helpers
 {
     public static class TypeHelpers
     {
-/// <summary>
+        /// <summary>
         /// Attempts to Parse the given input into the specified type 
         /// </summary>
         /// <typeparam name="T">The type you wish to convert your input into</typeparam>
