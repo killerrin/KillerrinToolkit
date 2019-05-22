@@ -10,6 +10,7 @@ namespace Killerrin.Toolkit.Core.Models
             get { return m_value; }
             set
             {
+                RaisePropertyChanging();
                 m_value = value;
                 RaisePropertyChanged();
             }
