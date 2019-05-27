@@ -7,7 +7,7 @@ using Windows.UI.Xaml.Data;
 
 namespace Killerrin.Toolkit.UWP.Converters
 {
-    public class OppositeBooleanConverter : IValueConverter
+    public class InverseBooleanConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
