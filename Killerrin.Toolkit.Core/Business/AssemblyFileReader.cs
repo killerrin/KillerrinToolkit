@@ -10,11 +10,22 @@ namespace Killerrin.Toolkit.Core.Business
 {
     public static class AssemblyFileReader
     {
+        /// <summary>
+        /// Gets the current assembly that a given Type lives in
+        /// </summary>
+        /// <typeparam name="T">The type you wish to get the assembly from</typeparam>
+        /// <returns>The assembly of the Type</returns>
         public static Assembly GetCurrentAssembly<T>()
         {
             return Assembly.GetAssembly(typeof(T));
         }
 
+        /// <summary>
+        /// Creates a fully formed Resource Name
+        /// </summary>
+        /// <param name="fileNameAndExtension"></param>
+        /// <param name="namespaceParts"></param>
+        /// <returns>The Resource Name</returns>
         public static string ResourceNameCreator(string fileNameAndExtension, params string[] namespaceParts)
         {
             var resourceName = string.Join(".", namespaceParts);

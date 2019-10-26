@@ -8,12 +8,23 @@ namespace Killerrin.Toolkit.Core.Helpers
 {
     public static class StringHelpers
     {
+        /// <summary>
+        /// Checks if a given string only contains numbers
+        /// </summary>
+        /// <param name="text">The string to check</param>
+        /// <returns>Whether the string only contains numbers</returns>
         public static bool IsNumeric(string text)
         {
             Regex regex = new Regex("[^0-9.-]+");
             return !regex.IsMatch(text);
         }
 
+        /// <summary>
+        /// Adds spaces to a combined PascalCase word
+        /// </summary>
+        /// <param name="text">The text to add spaces to</param>
+        /// <param name="preserveAcronyms">Whether to preserve Acronyms</param>
+        /// <returns>A new string containing the spaces</returns>
         public static string AddSpacesToSentence(string text, bool preserveAcronyms)
         {
             if (string.IsNullOrWhiteSpace(text))
@@ -32,6 +43,12 @@ namespace Killerrin.Toolkit.Core.Helpers
             return newText.ToString();
         }
 
+        /// <summary>
+        /// Returns a percentage detailing how similar two strings are
+        /// </summary>
+        /// <param name="string1">The first string</param>
+        /// <param name="string2">The second string</param>
+        /// <returns>A percentage of how similar the strings are</returns>
         public static double SimilarTo(this string string1, string string2)
         {
             string[] splitString1 = string1.Split(' ');
@@ -66,6 +83,12 @@ namespace Killerrin.Toolkit.Core.Helpers
             return outputString;
         }
         
+        /// <summary>
+        /// Combines two URL components together
+        /// </summary>
+        /// <param name="url1">The first URL</param>
+        /// <param name="url2">The second URL</param>
+        /// <returns>The combined URL</returns>
         public static string UrlCombine(string url1, string url2)
         {
             if (url1.Length == 0) { return url2; }

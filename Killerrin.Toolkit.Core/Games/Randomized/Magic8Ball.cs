@@ -12,7 +12,7 @@ namespace Killerrin.Toolkit.Core.Games.Randomized
         public static new Magic8Ball Instance { get; } = new Magic8Ball();
 
         #region Replies
-        private static List<string> Negatives = new List<string> {
+        public List<string> Negatives = new List<string> {
             "Very doubtful", 
             "Outlook not so good",
             "My sources say no",
@@ -20,7 +20,7 @@ namespace Killerrin.Toolkit.Core.Games.Randomized
             "Don't count on it",
         };
 
-        private static List<string> Neutral = new List<string> {
+        public List<string> Neutral = new List<string> {
             "Concentrate and ask again", 
             "Cannot predict now",
             "Better not tell you now",
@@ -28,7 +28,7 @@ namespace Killerrin.Toolkit.Core.Games.Randomized
             "Reply hazy try again"
         };
 
-        private static List<string> Positives = new List<string> {
+        public List<string> Positives = new List<string> {
             "All signs point to yes",
             "Yes",
             "Outlook Good",
@@ -45,18 +45,37 @@ namespace Killerrin.Toolkit.Core.Games.Randomized
         public Magic8Ball() : base() { }
         public Magic8Ball(int seed) : base(seed) { }
 
+        /// <summary>
+        /// Generates a Random Negative Response
+        /// </summary>
+        /// <returns>The response</returns>
         public string RandomNegative()
         {
             return Negatives[Random.Next(0, Negatives.Count)];
         }
+
+        /// <summary>
+        /// Generates a Random Neutral Response
+        /// </summary>
+        /// <returns>The response</returns>
         public string RandomNeutral()
         {
             return Neutral[Random.Next(0, Neutral.Count)];
         }
+
+        /// <summary>
+        /// Generates a Random Positive Response
+        /// </summary>
+        /// <returns>The response</returns>
         public string RandomPositive()
         {
             return Positives[Random.Next(0, Positives.Count)];
         }
+
+        /// <summary>
+        /// Generates a Random Response
+        /// </summary>
+        /// <returns>The response</returns>
         public string RandomAll()
         {
             int result = Random.Next(0, 3);
@@ -69,6 +88,5 @@ namespace Killerrin.Toolkit.Core.Games.Randomized
                     return "There was an unexpected error. Please try again later";
             }
         }
-
     }
 }

@@ -7,7 +7,13 @@ namespace Killerrin.Toolkit.Core.Helpers
 {
     public static class ExceptionHelpers
     {
-        public static string PrintOutException(this Exception ex, string headerMessage)
+        /// <summary>
+        /// Completely prints out a the full exception to the Debug window with an optional Header message
+        /// </summary>
+        /// <param name="ex">The exception</param>
+        /// <param name="headerMessage">An optional header message</param>
+        /// <returns>A string signifying the full exception trace</returns>
+        public static string PrintOutException(this Exception ex, string headerMessage = "")
         {
             string str = headerMessage;
             try
