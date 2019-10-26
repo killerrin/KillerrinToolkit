@@ -17,6 +17,10 @@ namespace Killerrin.Toolkit.Authentication.Models.Safe
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
+        /// <summary>
+        /// Checks if any of the fields are Empty
+        /// </summary>
+        /// <returns>Whether any of the fields are Empty</returns>
         public bool IsEmpty() { return string.IsNullOrWhiteSpace(Username) || string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(Password); }
 
     }

@@ -12,6 +12,14 @@ namespace Killerrin.Toolkit.Authentication.Services
     public class ValidationService : IUsernameValidator, IEmailValidator, IPasswordValidator
     {
         public string UsernameRegex { get; set; } = @"^[a-zA-Z0-9\s]";
+
+        /// <summary>
+        /// Validates a Username for the following criteria:
+        ///     * Between 1-40 Characters
+        ///     * Does not match the Username Regex
+        /// </summary>
+        /// <param name="username">The Username</param>
+        /// <returns>Whether the Username is Valid</returns>
         public virtual bool ValidateUsername(string username)
         {
             if (!IntHelpers.IsBetween(username.Length, 1, 40))
@@ -24,6 +32,11 @@ namespace Killerrin.Toolkit.Authentication.Services
         }
 
         public string EmailRegex { get; set; } = @"^[\w!#$%&'*+/=?`{|}~^-]+(?:\.[!#$%&'*+/=?`{|}~^-]+)*@(?:[A-Z0-9-]+\.)+[A-Z]{2,6}$";
+        /// <summary>
+        /// Validates the Email
+        /// </summary>
+        /// <param name="email">The Email</param>
+        /// <returns>Whether the Email is valid</returns>
         public virtual bool ValidateEmail(string email)
         {
             if (Regex.IsMatch(email, EmailRegex))
@@ -31,7 +44,17 @@ namespace Killerrin.Toolkit.Authentication.Services
             return true;
         }
 
+        /// <summary>
+        /// The minimum required Password Strength
+        /// </summary>
         public PasswordScore MinimumPasswordStrength { get; set; } = PasswordScore.Medium;
+
+        /// <summary>
+        /// Validates the Password for the following Criteria:
+        ///     * Password Strength
+        /// </summary>
+        /// <param name="password">The username to Validate</param>
+        /// <returns>Whether the Password is validated</returns>
         public virtual bool ValidatePassword(string password)
         {
             PasswordScore passwordStrength = CheckPasswordStrength(password);
@@ -41,6 +64,15 @@ namespace Killerrin.Toolkit.Authentication.Services
             return false;
         }
 
+        /// <summary>
+        /// Checks the strength of a given Password using the following Criteria:
+        ///     * Not Null or Empty
+        ///     * Contains atleast one lowercase character a-z
+        ///     * Contains atleast one uppercase character a-z
+        ///     * Contains a Symbol !@#$%^&*?_~-£()
+        /// </summary>
+        /// <param name="password">The password</param>
+        /// <returns>The strength of the Password</returns>
         public virtual PasswordScore CheckPasswordStrength(string password)
         {
             int score = 0;
