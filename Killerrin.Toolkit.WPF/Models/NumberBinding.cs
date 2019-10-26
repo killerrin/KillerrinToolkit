@@ -51,6 +51,10 @@ namespace Killerrin.Toolkit.WPF.Models
 
 
         public RelayCommand TryConvertCommand { get { return new RelayCommand(TryConvert); } }
+
+        /// <summary>
+        /// Tries to convert Raw string into its proper Value Type 
+        /// </summary>
         public void TryConvert()
         {
             if (NumberType == typeof(float))
@@ -70,7 +74,13 @@ namespace Killerrin.Toolkit.WPF.Models
             }
             else
             {
-                try { Value = TypeHelpers.TryParse<T>(Raw); }
+                try
+                {
+                    if (TypeHelpers.TryParse<T>(Raw, out T output))
+                    {
+                        Value = output;
+                    }
+                }
                 catch (Exception) { }
             }
         }
