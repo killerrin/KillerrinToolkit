@@ -21,6 +21,11 @@ namespace Killerrin.Toolkit.WPF.Services
         public ResourceManager TranslationResources { get; protected set; }
         public event PropertyChangedEventHandler PropertyChanged;
 
+        /// <summary>
+        /// Retrieves the Translation string from the Translation Resources
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
         public string this[string key]
         {
             get { return TranslationResources?.GetString(key, m_currentCulture); }
@@ -57,8 +62,23 @@ namespace Killerrin.Toolkit.WPF.Services
             }
         }
 
+        /// <summary>
+        /// Whether the CurrentCulture info is set
+        /// </summary>
+        /// <returns>A boolean containing if the CurrentCulture is set</returns>
         public bool IsLoaded() { return CurrentCulture != null; }
+
+        /// <summary>
+        /// Checks if a language code is for the CurrentCulture
+        /// </summary>
+        /// <param name="languageCode">The Language Code</param>
+        /// <returns>Whether the Language Code is for the CurrentCulture</returns>
         public bool IsLanguage(string languageCode) { return CurrentCulture?.Name == languageCode; }
+
+        /// <summary>
+        /// Switches the Translations to a given Language
+        /// </summary>
+        /// <param name="languageCode">The Language Code to switch to</param>
         public void SwitchToLanguage(string languageCode) { CurrentCulture = LoadedLanguages[languageCode]; }
     }
 
