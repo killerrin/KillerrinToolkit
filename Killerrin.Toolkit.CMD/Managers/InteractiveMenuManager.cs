@@ -27,12 +27,18 @@ namespace Killerrin.Toolkit.CMD.Managers
             MenuInputManager = inputManager;
         }
 
+        /// <summary>
+        /// Exits the menu
+        /// </summary>
         public void ExitMenu()
         {
             MenuRunning = false;
             OnMenuManagerExit?.Invoke(this, null);
         }
 
+        /// <summary>
+        /// Runs the Menu System
+        /// </summary>
         public void RunMenuSystem()
         {
             // Utilize this for new menu navigation https://stackoverflow.com/questions/46908148/controlling-menu-with-the-arrow-keys-and-enter
