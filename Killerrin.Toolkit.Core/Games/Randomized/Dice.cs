@@ -15,8 +15,27 @@ namespace Killerrin.Toolkit.Core.Games.Randomized
         public Dice() : base() { }
         public Dice(int seed) : base(seed) { }
 
+        /// <summary>
+        /// Rolls a dice between two values
+        /// </summary>
+        /// <param name="min">The minimum value (inclusive)</param>
+        /// <param name="max">The maximum value (exclusive)</param>
+        /// <returns>The dice value</returns>
         public int RollBetween(int min, int max) { return Random.Next(min, max); }
+
+        /// <summary>
+        /// Rolls a dice with a specific number of sides
+        /// </summary>
+        /// <param name="sidesOnDice">The number of sides on this dice</param>
+        /// <returns>The dice value</returns>
         public int Roll(int sidesOnDice) { return Random.Next(1, sidesOnDice + 1); }
+
+        /// <summary>
+        /// Rolls multiple dice with a specific number of sides
+        /// </summary>
+        /// <param name="numberOfDice">The number of dice to roll</param>
+        /// <param name="sidesOnDice">The number of sides on this dice</param>
+        /// <returns>The total dice value</returns>
         public int Roll(int numberOfDice, int sidesOnDice)
         {
             if (numberOfDice == 0) numberOfDice = 1;
@@ -27,6 +46,26 @@ namespace Killerrin.Toolkit.Core.Games.Randomized
             return totalRoll;
         }
 
+        /// <summary>
+        /// Rolls dice using a DnD Dice String
+        /// </summary>
+        /// <param name="dieString">A dnd formatted dice string</param>
+        /// <returns>The total dice value</returns>
+        /// <example>Roll("5d20");</example>
+        public int Roll(string dieString)
+        {
+            var rolls = RollMultiple(dieString);
+            int sum = 0;
+            foreach (var roll in rolls) { sum += roll; }
+            return sum;
+        }
+
+        /// <summary>
+        /// Rolls multiple dice with a specific number of sides
+        /// </summary>
+        /// <param name="numberOfDice">The number of dice to roll</param>
+        /// <param name="sidesOnDice">The number of sides on this dice</param>
+        /// <returns>A list of dice values</returns>
         public List<int> RollMultiple(int numberOfDice, int sidesOnDice)
         {
             if (numberOfDice == 0) numberOfDice = 1;
@@ -39,6 +78,13 @@ namespace Killerrin.Toolkit.Core.Games.Randomized
 
             return rolls;
         }
+
+        /// <summary>
+        /// Rolls dice using a DnD Dice String
+        /// </summary>
+        /// <param name="dieString">A dnd formatted dice string</param>
+        /// <returns>A list of dice values</returns>
+        /// <example>RollMultiple("5d20");</example>
         public List<int> RollMultiple(string dieString)
         {
             Debug.WriteLine($"Rolling: {dieString}");

@@ -6,6 +6,13 @@ namespace Killerrin.Toolkit.Core.Helpers
 {
     public static class CurrencyHelpers
     {
+
+        /// <summary>
+        /// Converts a value to its shorthand acryonymized value
+        /// </summary>
+        /// <param name="value">The value to convert to short hand</param>
+        /// <example>1000 == 1k</example>
+        /// <returns>The shorthand acronymized value</returns>
         public static string ConvertToShorthand(double value)
         {
             string stringValue = value.ToString();

@@ -24,6 +24,9 @@ namespace Killerrin.Toolkit.Core.Services
             }
         }
 
+        /// <summary>
+        /// Creates a folder if it does not exist
+        /// </summary>
         public void CreateFolder()
         {
             if (!Directory.Exists(FolderPathToSave.OriginalString))

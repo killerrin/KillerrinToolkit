@@ -11,6 +11,12 @@ namespace Killerrin.Toolkit.Core.Helpers
         public const int Day = Hour * 24;
         public const int Year = Day * 365;
 
+        /// <summary>
+        /// Returns the day which signifies the start of the week
+        /// </summary>
+        /// <param name="dt">A day in a week to get the start of the week from</param>
+        /// <param name="startOfWeek">Your beginning day of the week</param>
+        /// <returns>The date signifying the start of the week</returns>
         public static DateTime StartOfWeek(this DateTime dt, DayOfWeek startOfWeek)
         {
             int diff = dt.DayOfWeek - startOfWeek;
@@ -22,6 +28,11 @@ namespace Killerrin.Toolkit.Core.Helpers
             return dt.AddDays(-1 * diff).Date;
         }
 
+        /// <summary>
+        /// Converts Date to a relative time string compared against today
+        /// </summary>
+        /// <param name="utcValue">A UTC Date</param>
+        /// <returns>A relative time string from today</returns>
         public static string ToRelativeDateTimeString(this DateTime utcValue)
         {
             // Calculate the Difference

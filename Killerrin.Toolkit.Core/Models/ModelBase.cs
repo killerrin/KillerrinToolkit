@@ -8,7 +8,16 @@ namespace Killerrin.Toolkit.Core.Models
 {
     public interface IModelBase : INotifyPropertyChanging, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Raises the property changing event
+        /// </summary>
+        /// <param name="property">The property that is changing</param>
         void RaisePropertyChanging([CallerMemberName]string property = "");
+
+        /// <summary>
+        /// Raises the property changed event
+        /// </summary>
+        /// <param name="property">The property that changed</param>
         void RaisePropertyChanged([CallerMemberName]string property = "");
     }
 

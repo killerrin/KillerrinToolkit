@@ -16,6 +16,9 @@ namespace Killerrin.Toolkit.Core.Models
             }
         }
 
+        /// <summary>
+        /// Whether the DataBind contains a value
+        /// </summary>
         public bool HasValue
         {
             get { return m_value != null; }
@@ -74,12 +77,19 @@ namespace Killerrin.Toolkit.Core.Models
         /// </remarks>
         public event PropertyChangedEventHandler ValueChanged;
 
+        /// <summary>
+        /// Raises all the property changing events
+        /// </summary>
         public void RaisePropertyChanging()
         {
             PropertyChanging?.Invoke(this, new PropertyChangingEventArgs(nameof(Value)));
             PropertyChanging?.Invoke(this, new PropertyChangingEventArgs(nameof(HasValue)));
             PropertyChanging?.Invoke(this, new PropertyChangingEventArgs(nameof(IsDefault)));
         }
+
+        /// <summary>
+        /// Raises all the property changed events
+        /// </summary>
         public void RaisePropertyChanged()
         {
             ValueChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Value)));
@@ -87,4 +97,5 @@ namespace Killerrin.Toolkit.Core.Models
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HasValue)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsDefault)));
         }
+    }
 }
