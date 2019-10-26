@@ -7,6 +7,12 @@ namespace Killerrin.Toolkit.CMD.Helpers
 {
     public class ConsoleHelper
     {
+        /// <summary>
+        /// A multiple choice interactive menu within the Console using your Keyboard
+        /// </summary>
+        /// <param name="multipleChoiceConsole">The menu configuration </param>
+        /// <param name="options">The options to display</param>
+        /// <returns>The selected option</returns>
         public static int MultipleChoice(MultipleChoiceConsoleConfiguration multipleChoiceConsole, params string[] options)
         {
             int currentSelection = 0;

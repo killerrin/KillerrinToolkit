@@ -23,8 +23,15 @@ namespace Killerrin.Toolkit.CMD.Managers
 
         private NavigationManager() { }
 
+        /// <summary>
+        /// Notifies when the Navigation Manager exits
+        /// </summary>
         public event EventHandler<object> OnExit;
 
+        /// <summary>
+        /// Peeks the top menu from the stack
+        /// </summary>
+        /// <returns></returns>
         public Menu Peek()
         {
             if (m_backStack.Count == 0) return null;
@@ -32,6 +39,10 @@ namespace Killerrin.Toolkit.CMD.Managers
             catch (Exception) { return null; }
         }
 
+        /// <summary>
+        /// Goes to the previous Menu Item
+        /// </summary>
+        /// <returns>The new page</returns>
         public Menu GoBack()
         {
             // Trigger exit if nothing exists
@@ -61,6 +72,11 @@ namespace Killerrin.Toolkit.CMD.Managers
             // Return the new menu
             return newPage as Menu;
         }
+
+        /// <summary>
+        /// Navigates to a new Menu
+        /// </summary>
+        /// <param name="menu">The new Menu</param>
         public void Navigate(Menu menu)
         {
             var iMenu = menu as IMenuNavigationHook;

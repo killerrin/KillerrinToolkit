@@ -22,7 +22,9 @@ namespace Killerrin.Toolkit.CMD.Menus
             NumberOfTimes = numberOfTimes;
         }
 
-
+        /// <summary>
+        /// Runs the Menu
+        /// </summary>
         public override void Run() { }
     }
 }

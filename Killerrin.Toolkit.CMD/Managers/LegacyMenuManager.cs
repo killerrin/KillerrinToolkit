@@ -35,12 +35,18 @@ namespace Killerrin.Toolkit.CMD.Managers
             MenuInputManager = inputManager;
         }
 
+        /// <summary>
+        /// Exits the Menu
+        /// </summary>
         public void ExitMenu()
         {
             MenuRunning = false;
             OnMenuManagerExit?.Invoke(this, null);
         }
 
+        /// <summary>
+        /// Runs the Menu System
+        /// </summary>
         public void RunMenuSystem()
         {
             MenuRunning = true;
@@ -94,6 +100,10 @@ namespace Killerrin.Toolkit.CMD.Managers
             }
         }
 
+        /// <summary>
+        /// Prints the Menu
+        /// </summary>
+        /// <param name="menu">The Menu to print</param>
         protected virtual void PrintMenu(IMenu menu)
         {
             try
@@ -126,6 +136,13 @@ namespace Killerrin.Toolkit.CMD.Managers
             }
             catch (Exception) { }
         }
+
+        /// <summary>
+        /// Gets the result from the Menu
+        /// </summary>
+        /// <param name="menu">The Menu</param>
+        /// <param name="menuCode">The Menu Code</param>
+        /// <returns>The MenuResultCode</returns>
         protected virtual MenuResultCode GetMenuResult(IMenu menu, string menuCode)
         {
             if (MenuInputManager.IsExitCode(menuCode)) return MenuResultCode.Exit;

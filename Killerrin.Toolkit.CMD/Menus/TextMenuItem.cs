@@ -24,6 +24,10 @@ namespace Killerrin.Toolkit.CMD.Menus
             DisplayKey = displayKey;
             SpecialAction = specialAction;
         }
+
+        /// <summary>
+        /// Runs the Menu
+        /// </summary>
         public override void Run()
         {
             SpecialAction?.Invoke();

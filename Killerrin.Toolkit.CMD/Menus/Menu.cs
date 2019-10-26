@@ -23,10 +23,25 @@ namespace Killerrin.Toolkit.CMD.Menus
 
         }
 
+        /// <summary>
+        /// Notifies before the Menu is run
+        /// </summary>
         public event EventHandler<string> OnPreMenuRun;
+
+        /// <summary>
+        /// Runs the menu
+        /// </summary>
         public abstract void Run();
+
+        /// <summary>
+        /// Notifies after the Menu is run
+        /// </summary>
         public event EventHandler<string> OnPostMenuRun;
 
+        /// <summary>
+        /// Adds a Submenu to this Menu
+        /// </summary>
+        /// <param name="menu">The Submenu to add</param>
         protected internal void AddMenuItem(Menu menu)
         {
             if (menu is SeparatorMenuItem)
@@ -43,7 +58,19 @@ namespace Killerrin.Toolkit.CMD.Menus
                 MenuItems[$"{MenuItems.Count}"] = menu;
             }
         }
+
+        /// <summary>
+        /// Gets a given Submenu using its Menu Code
+        /// </summary>
+        /// <param name="menuCode">The Menu Code</param>
+        /// <returns>The Submenu</returns>
         protected internal Menu GetMenuItem(string menuCode) { return MenuItems[menuCode]; }
+
+        /// <summary>
+        /// Gets a given Submenu using its Menu Name
+        /// </summary>
+        /// <param name="name">The Name of the menu</param>
+        /// <returns>The Submenu</returns>
         protected internal Menu GetMenuItemByName(string name) { return MenuItems.Values.Where(x => x.Name == name).FirstOrDefault(); }
 
         #region IMenuNavigationHook
