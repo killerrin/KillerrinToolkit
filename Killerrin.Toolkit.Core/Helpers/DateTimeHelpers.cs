@@ -27,7 +27,7 @@ namespace Killerrin.Toolkit.Core.Helpers
 
             return dt.AddDays(-1 * diff).Date;
         }
-
+        
         /// <summary>
         /// Converts Date to a relative time string compared against today
         /// </summary>
@@ -35,12 +35,23 @@ namespace Killerrin.Toolkit.Core.Helpers
         /// <returns>A relative time string from today</returns>
         public static string ToRelativeDateTimeString(this DateTime utcValue)
         {
+            return ToRelativeDateTimeString(DateTime.UtcNow, utcValue)
+        }
+        
+        /// <summary>
+        /// Converts Date to a relative time string
+        /// </summary>
+        /// <param name="fromDate">From Date</param>
+        /// <param name="toDate">To Date</param>
+        /// <returns>A relative time string</returns>
+        public static string ToRelativeDateTimeString(DateTime fromDate, DateTime toDate)
+        {
             // Calculate the Difference
-            var difference = DateTime.UtcNow - utcValue;
+            var difference = fromDate - toDate;
 
             // Exit early if inputs are invalid
-            if (utcValue == DateTime.MinValue) return "";
-            else if (utcValue == DateTime.MaxValue) return "";
+            if (toDate == DateTime.MinValue) return "";
+            else if (toDate == DateTime.MaxValue) return "";
 
             // Begin converting to relative time
             string result = "";
@@ -70,7 +81,7 @@ namespace Killerrin.Toolkit.Core.Helpers
                 result = Math.Floor(difference.TotalDays / 30) + " months ago";
 
             // And because no one cares once its past a certain point, just display a year
-            else result = utcValue.ToString();
+            else result = toDate.ToString();
 
             //Debug.WriteLine(result.ToString());
             return result;
