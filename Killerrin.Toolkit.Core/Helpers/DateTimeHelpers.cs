@@ -35,7 +35,7 @@ namespace Killerrin.Toolkit.Core.Helpers
         /// <returns>A relative time string from today</returns>
         public static string ToRelativeDateTimeString(this DateTime utcValue)
         {
-            return ToRelativeDateTimeString(DateTime.UtcNow, utcValue)
+            return ToRelativeDateTimeString(DateTime.UtcNow, utcValue);
         }
         
         /// <summary>
